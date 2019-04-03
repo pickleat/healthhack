@@ -1,0 +1,36 @@
+/* 
+black #000000 
+darkgrey #212121 
+mediumgrey #303030 
+grey #424242
+text white #ffffff 
+*/
+
+/* body {
+    color: aliceblue;
+    background-color: #1b1b1b;
+
+} */
+
+/* .slidecontainer {
+    width: 100%; 
+  } 
+*/
+  
+  /* The slider itself */
+/* .slider {
+width: 25%; 
+} */
+  
+/* .step1container {
+background-color: #303030;
+border-radius: 5px;
+padding: 10px;
+} */
+.openingContainer {
+    background-color: #bebebe;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+}
+

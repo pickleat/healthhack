@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="index.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0/9.10/auth0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<header class="content">
+                <nav class="navbar sticky-top navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <div class="navbar-header">
+                      <a class="navbar-brand" href="#">h2H</a>
+                      <!-- <button id="btn-home-view" class="btn btn-primary btn-margin">h2H</button> -->
+                      <button id="btn-login" class="btn btn-primary btn-margin">Sign In/Up</button>              
+                      <button id="btn-logout" class="btn btn-primary btn-margin">Sign Out</button>
+              
+                    </div>
+                  </div>
+                </nav>
+                <main class="container">
+                  <!-- home view -->
+                  <div id="home-view">
+                    <h4></h4>
+                  </div>
+                  
+                </main>
+</header>
+<h1 style="text-align: center;">
+        Hack to Health!
+    </h1>
+<body>
+    <div class="openingContainer">
+        <h2>No expensive equipment, gym memberships, even no sweat (maybe 🤓).</h2><br>
+        <div>For years I've struggled to create a healthy habit of exercise, after listening to <a href="https://www.npr.org/podcasts/510329/learn-to-love-exercising">NPR's LifeKit</a>, I decided to implement their strategies to create an exercise habit that "sticks". Feel better, be healthier with easy body-weight exercises and simple daily encouragement.</div><br>
+        <button class="btn btn-primary" id='start'>Get started?</button>
+    </div><br>
+    <div class="step1container">
+        Step One: what is a comfortable number of push-ups, sit-ups, and squats for you to do right now?
+        <input type="range" min="1" max="30" value="5" class="slider" id="step1Range"><br><span id="demo"></span>
+    </div>
+
+</body>
+<footer>Created by <a href="www.twitter.com/pickleat">@pickleat</a></footer>
