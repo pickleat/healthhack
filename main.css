@@ -34,3 +34,28 @@ padding: 10px;
     margin: 20px;
 }
 
+ul {
+    list-style: none;
+}
+
+.appContainer {
+    background-color: #bebebe;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input[type=time] {
+    border-radius: 5px;
+    border: 0px;
+    width: fit-content;
+    color: #303030;
+    outline-style: none;
+    background-color: rgba(245, 245, 245, .8);
+
+  -webkit-appearance: none;
+}

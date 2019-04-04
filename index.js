@@ -1,33 +1,23 @@
 
-window.onload = () => {
-var slider = document.getElementById("step1Range");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
-
-// changes slider value in the page
-slider.addEventListener('input', ()  => {
-    output.innerHTML = slider.value;
-});
-var start = document.getElementById('start');
-
-start.addEventListener('click', () => {
-    
-});
-}
-
-// app.js
-
 window.addEventListener('load', () => {
+    // var slider = document.getElementById("step1Range");
+    // var output = document.getElementById("demo");
+    // output.innerHTML = slider.value; // Display the default slider value
+
+    // changes slider value in the page
+    // slider.addEventListener('input', ()  => {
+    //     output.innerHTML = slider.value;
+    // });
     var idToken;
     var accessToken;
     var expiresAt;
-  
+
     var webAuth = new auth0.WebAuth({
       domain: 'hackerfitness.auth0.com',
       clientID: 'YoSaS0XcbdpghK0CNT4jXGn6EfPJNgJO',
       responseType: 'token id_token',
       scope: 'openid',
-      redirectUri: window.location.href
+      redirectUri: 'http://localhost:5500/'
     });
   
     var loginBtn = document.getElementById('btn-login');
@@ -36,26 +26,35 @@ window.addEventListener('load', () => {
       e.preventDefault();
       webAuth.authorize();
     });
-  });
-
-  window.addEventListener('load', function() {
 
     // ...
-    var loginStatus = document.querySelector('.container h4');
+    var loginStatus = document.querySelector('.loginStatusContainer h4');
     var loginView = document.getElementById('login-view');
     var homeView = document.getElementById('home-view');
   
     // buttons and event listeners
-    var homeViewBtn = document.getElementById('btn-home-view');
     var loginBtn = document.getElementById('btn-login');
     var logoutBtn = document.getElementById('btn-logout');
   
-    homeViewBtn.addEventListener('click', function() {
-      homeView.style.display = 'inline-block';
-      loginView.style.display = 'none';
-    });
+    var start = document.getElementById('start');
+    start.addEventListener('click', () => {
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            var openingContainer = document.getElementsByClassName('openingContainer');
+            openingContainer[0].style.display = 'none';
+        }    
+    })
+
   
     logoutBtn.addEventListener('click', logout);
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        console.log('youre already signed in my dude')
+        renewTokens();
+        start.innerHTML = 'Get Started';
+      } else {
+        handleAuthentication();
+        start.innerHTML = 'Sign In to Get Started';
+      }
   
     function handleAuthentication() {
       webAuth.parseHash(function(err, authResult) {
@@ -121,21 +120,15 @@ window.addEventListener('load', () => {
       if (isAuthenticated()) {
         loginBtn.style.display = 'none';
         logoutBtn.style.display = 'inline-block';
-        loginStatus.innerHTML = 'You are logged in!';
+        // loginStatus.innerHTML = 'You are logged in!';
+        // loginStatus.style.textAlign = "right";
       } else {
         loginBtn.style.display = 'inline-block';
         logoutBtn.style.display = 'none';
-        loginStatus.innerHTML =
-          'You are not logged in! Please log in to continue.';
+        // loginStatus.innerHTML =
+        //   'You are not logged in! Please log in to continue.';
+        //   loginStatus.style.textAlign = "right";
       }
     }
   });
 
-  window.addEventListener('load', function() {
-    // ...
-    if (localStorage.getItem('isLoggedIn') === 'true') {
-      renewTokens();
-    } else {
-      handleAuthentication();
-    }
-  });

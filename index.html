@@ -20,27 +20,37 @@
               
                     </div>
                   </div>
+                        <div class="loginStatusContainer" id="home-view">
+                          <h4></h4>
+                        </div>
                 </nav>
-                <main class="container">
-                  <!-- home view -->
-                  <div id="home-view">
-                    <h4></h4>
-                  </div>
-                  
-                </main>
+
 </header>
 <h1 style="text-align: center;">
         Hack to Health!
     </h1>
 <body>
     <div class="openingContainer">
-        <h2>No expensive equipment, gym memberships, even no sweat (maybe 🤓).</h2><br>
+        <h2>
+            <ul>
+                <li>No Expensive Equipment</li>
+                <li>No Gym Memberships</li>
+                <li>No Sweat (maybe 🤓)</li>
+            </ul>
+        </h2><br>
         <div>For years I've struggled to create a healthy habit of exercise, after listening to <a href="https://www.npr.org/podcasts/510329/learn-to-love-exercising">NPR's LifeKit</a>, I decided to implement their strategies to create an exercise habit that "sticks". Feel better, be healthier with easy body-weight exercises and simple daily encouragement.</div><br>
-        <button class="btn btn-primary" id='start'>Get started?</button>
+        <button class="btn btn-primary" id='start'></button>
     </div><br>
-    <div class="step1container">
-        Step One: what is a comfortable number of push-ups, sit-ups, and squats for you to do right now?
-        <input type="range" min="1" max="30" value="5" class="slider" id="step1Range"><br><span id="demo"></span>
+    <div class="appContainer">
+        <h2>Let's do this!</h2>
+        <ol>
+            <li>What time do you wake up in the morning? <input class="times" type="time" value="06:30" id="startTime"></li>
+            <li>What time do you go to sleep? <input class="times" type="time" id="stopTime" value="22:30"></li>
+        </ol>
+        This value of this app is in its consistent encouragement!<br>
+        <input type="checkbox" checked='true'> Check here for personalized notifications.<br>
+        <button class="btn btn-primary" id='personalized'>Let's do this!</button>
+        <!-- <input type="range" min="1" max="30" value="5" class="slider" id="step1Range"><br><span id="demo"></span> -->
     </div>
 
 </body>
